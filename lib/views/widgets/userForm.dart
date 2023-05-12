@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:store/controllers/userController.dart';
 import 'package:store/utils/colors.dart';
+import 'package:store/views/screens/Home.dart';
+import 'package:store/views/screens/homePageNavigationBar.dart';
 import 'package:store/views/screens/phoneSignUp.dart';
 import 'package:store/views/screens/signupScreen.dart';
 import 'package:store/views/widgets/buttonWidget.dart';
@@ -79,7 +81,10 @@ class UserForm extends StatelessWidget {
                 ButtonWidget(btnTxt: "SIGN IN",btnClr: AppColors.btnClr,
                   btnTxtClr: AppColors.btnTxtClr,btnTxtSize: 17,
                   spaceBeforeTxt: 30,
-                  function: () => controller.saveUser(),
+                  function: (){
+                    controller.saveUser();
+                    Get.to(const MyHomePage());
+                  },
                   btnIcon: "assets/images/signInIcon.png",
                   btnIconClr: AppColors.btnIconClr,),
                 Padding(

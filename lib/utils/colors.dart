@@ -15,5 +15,8 @@ class AppColors{
   static const focusClr= Colors.black;
   static const formIconClr=Color(0xFFC6AB59);
   static const checkBoxClr=Color(0xFFC6AB59);
+  static const hoverClr=Color(0xFFC6AB59);
+  static const tabBgClr=Color(0xFFC6AB59);
   static const snackBarClr=Colors.black45;
+  static const cardClr= Color(0xFFE1E1E1);
 }
