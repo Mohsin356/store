@@ -85,12 +85,10 @@ class Home extends StatelessWidget {
                                               SizedBox(
                                                   height:20,
                                                   child: TextWidget(txt: "100+ Products",txtSize: 12,txtClr: AppColors.hintTxtClr,))
-
                                             ],
                                           ),
                                         ),
                                       )
-
                                     ],
                                   ),
                                 );
