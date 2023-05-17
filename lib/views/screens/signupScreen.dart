@@ -55,7 +55,7 @@ class SignUp extends StatelessWidget {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Container(color:AppColors.dividerClr ,height: 2,),
+                            Container(color:AppColors.dividerClr ,height: 1,),
                             Center(
                               child: SizedBox(
                                 width: 305,

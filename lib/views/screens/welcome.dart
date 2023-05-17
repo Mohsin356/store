@@ -2,8 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:store/utils/colors.dart';
-import 'package:store/views/screens/loginScreen.dart';
-import 'package:store/views/widgets/buttonWidget.dart';
 import 'package:store/views/widgets/textWidget.dart';
 
 class WelcomeScreen extends StatelessWidget {

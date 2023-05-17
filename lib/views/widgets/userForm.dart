@@ -72,7 +72,7 @@ class UserForm extends StatelessWidget {
                  children: [ GestureDetector(child: const TextWidget(txt: "Forgot Password?",
                    txtSize: 13,txtClr: AppColors.txtClr,
                    fontWeight: FontWeight.bold,),
-                   onTap: (){Get.to(const PhoneSignUp());},)],
+                   onTap: (){Get.to(()=>const PhoneSignUp());},)],
                ),
              ],
            ),
@@ -83,7 +83,7 @@ class UserForm extends StatelessWidget {
                   spaceBeforeTxt: 30,
                   function: (){
                     controller.saveUser();
-                    Get.to(const MyHomePage());
+                    Get.to(()=>const MyHomePage());
                   },
                   btnIcon: "assets/images/signInIcon.png",
                   btnIconClr: AppColors.btnIconClr,),
@@ -97,7 +97,7 @@ class UserForm extends StatelessWidget {
                       GestureDetector(child: const TextWidget(txt: "Sign up",
                         txtSize: 13,txtClr: AppColors.txtClr,
                         fontWeight: FontWeight.bold,),
-                        onTap: (){Get.to(const SignUp());},)
+                        onTap: (){Get.to(()=>const SignUp());},)
                     ],
                   ),
                 ),

@@ -106,7 +106,7 @@ class SignUpForm extends StatelessWidget {
                 ButtonWidget(btnTxt: "SIGN UP",btnClr: AppColors.btnClr,
                   btnTxtClr: AppColors.btnTxtClr,btnTxtSize: 17,
                   spaceBeforeTxt: 30,
-                  function: () => Get.to(const PhoneSignUp()),
+                  function: () => Get.to(()=>const PhoneSignUp()),
                   btnIcon: "assets/images/signInIcon.png",
                   btnIconClr: AppColors.btnIconClr,),
                 Padding(
@@ -119,7 +119,7 @@ class SignUpForm extends StatelessWidget {
                       GestureDetector(child: const TextWidget(txt: "Sign in",
                         txtSize: 13,txtClr: AppColors.txtClr,
                         fontWeight: FontWeight.bold,),
-                        onTap: (){Get.to(const LoginScreen());},)
+                        onTap: (){Get.to(()=>const LoginScreen());},)
                     ],
                   ),
                 ),

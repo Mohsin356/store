@@ -1,15 +1,17 @@
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:store/utils/colors.dart';
+import 'package:store/views/screens/productCategory.dart';
 import 'package:store/views/widgets/textWidget.dart';
 
 class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
-
+   const Home({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+          extendBodyBehindAppBar: true,
           backgroundColor: AppColors.appBgClr,
           appBar: AppBar(
             leading: Padding(
@@ -22,7 +24,7 @@ class Home extends StatelessWidget {
           body: SingleChildScrollView(
             child: Column(
               children: [
-                const SizedBox(height: 20,),
+                const SizedBox(height: 60,),
                 SizedBox(height: 316,
                 child:
                   Column(
@@ -47,50 +49,68 @@ class Home extends StatelessWidget {
                               const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1,
                                   mainAxisSpacing: 0),
                               itemBuilder: (BuildContext context, int index) {
-                                return SizedBox(
-                                  width: 205,
-                                  child: Stack(
-                                    children: [
-                                      Positioned(
-                                        top: 60,
-                                        child:Card(
-                                          color: AppColors.cardClr,
-                                          shape: RoundedRectangleBorder(
-                                              borderRadius: BorderRadius.circular(30)),
-                                          shadowColor: Colors.black,
-                                          child: const SizedBox(
+                                return GestureDetector(
+                                  child: SizedBox(
+                                    width: 205,
+                                    child: Stack(
+                                      children: [
+                                        Positioned(
+                                          top: 80,
+                                          child:Transform(
+                                            transform: Matrix4.skewY(-0.15),
+                                            child: Container(
+                                              width: 205,
+                                              height: 170,
+                                              decoration: BoxDecoration(
+                                                color: AppColors.cardClr,
+                                                borderRadius: BorderRadius.circular(30.0),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Positioned(
+                                          bottom: 0,
+                                          child:Container(
                                             width: 205,
-                                            height: 180,
+                                            height: 100,
+                                            decoration: BoxDecoration(
+                                              color: AppColors.cardClr,
+                                              borderRadius: BorderRadius.circular(30.0),
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                      SizedBox(
-                                        height: 160,
-                                        child:FittedBox(
-                                      fit: BoxFit.fill,
-                                      child: Image.asset("assets/images/speaker.png")),
-                                      ),
-                                      Positioned(
-                                        bottom: 20,
-                                        child: SizedBox(
-                                          height: 48,
+                                        SizedBox(
+                                          height: 150,
                                           width: 205,
-                                          child: Column(
-                                            mainAxisAlignment: MainAxisAlignment.center,
-                                            crossAxisAlignment: CrossAxisAlignment.center,
-                                            children: const [
-                                              SizedBox(
-                                                  height:24,
-                                                  child: TextWidget(txt: "Speakers",txtSize: 16,fontWeight: FontWeight.bold,)),
-                                              SizedBox(
-                                                  height:20,
-                                                  child: TextWidget(txt: "100+ Products",txtSize: 12,txtClr: AppColors.hintTxtClr,))
-                                            ],
-                                          ),
+                                          child:FittedBox(
+                                        fit: BoxFit.fill,
+                                        child: Image.asset("assets/images/speaker.png")),
                                         ),
-                                      )
-                                    ],
+                                        Positioned(
+                                          bottom: 20,
+                                          child: SizedBox(
+                                            height: 48,
+                                            width: 205,
+                                            child: Column(
+                                              mainAxisAlignment: MainAxisAlignment.center,
+                                              crossAxisAlignment: CrossAxisAlignment.center,
+                                              children: const [
+                                                SizedBox(
+                                                    height:24,
+                                                    child: TextWidget(txt: "Speakers",txtSize: 16,fontWeight: FontWeight.bold,)),
+                                                SizedBox(
+                                                    height:20,
+                                                    child: TextWidget(txt: "100+ Products",txtSize: 12,txtClr: AppColors.hintTxtClr,))
+                                              ],
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
                                   ),
+                                  onTap: (){
+                                    Get.to(()=>const ProductCategory());
+                                  },
                                 );
                               },
                             ),
@@ -100,9 +120,9 @@ class Home extends StatelessWidget {
                       const SizedBox(height: 24,),
                     ],
                   ),),
-                Container(color:AppColors.dividerClr ,height: 2,),
-                const SizedBox(height: 20,),
-                SizedBox(height: 316,
+                Container(color:AppColors.dividerClr ,height: 1,),
+                const SizedBox(height: 30,),
+                SizedBox(height: 310,
                   child:
                   Column(
                     children: [
@@ -117,28 +137,53 @@ class Home extends StatelessWidget {
                       Expanded(
                         child: Padding(
                           padding: const EdgeInsets.only(left: 20.0),
-                          child: SizedBox(
-                            height: 209,
-                            child: ListView.separated(
-                              itemCount: 9,
-                              scrollDirection: Axis.horizontal,
-                              itemBuilder: (context,index){
-                                return  Card(
-                                  color: AppColors.cardClr,
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(30)),
-                                  shadowColor: Colors.black,
-                                  child: const SizedBox(
-                                    width: 145,
-                                    height: 209,
+                          child: ListView.separated(
+                            itemCount: 9,
+                            scrollDirection: Axis.horizontal,
+                            itemBuilder: (context,index){
+                              return  Card(
+                                color: AppColors.cardClr,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30)),
+                                shadowColor: Colors.black,
+                                child: SizedBox(
+                                  width: 145,
+                                  height: 209,
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                    children: [
+                                      SizedBox(
+                                        height: 120,
+                                        width: 145,
+                                        child:FittedBox(
+                                            fit: BoxFit.fill,
+                                            child: Image.asset("assets/images/speaker.png")),
+                                      ),
+                                      SizedBox(
+                                        height: 48,
+                                        width: 145,
+                                        child: Column(
+                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          crossAxisAlignment: CrossAxisAlignment.center,
+                                          children: const [
+                                            SizedBox(
+                                                height:24,
+                                                child: TextWidget(txt: "Speakers",txtSize: 16,fontWeight: FontWeight.bold,)),
+                                            SizedBox(
+                                                height:20,
+                                                child: TextWidget(txt: "\$1,600",txtSize: 12,txtClr: AppColors.hintTxtClr,))
+                                          ],
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                );
-                              },
-                              separatorBuilder: (context, index) => SizedBox(
-                                width: 10,
-                              ),
-
+                                ),
+                              );
+                            },
+                            separatorBuilder: (context, index) => const SizedBox(
+                              width: 10,
                             ),
+
                           ),
                         ),
                       ),

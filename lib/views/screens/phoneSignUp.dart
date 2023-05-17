@@ -23,7 +23,7 @@ class PhoneSignUp extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: 10,),
-                Container(
+                SizedBox(
                   height: 380,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -95,7 +95,7 @@ class PhoneSignUp extends StatelessWidget {
                                       duration: Duration(seconds: 3),
                                       backgroundColor: AppColors.snackBarClr,
                                     ),
-                                  ) :Get.to(const OtpScreen());
+                                  ) :Get.to(()=>const OtpScreen());
                                 },
                                 btnIcon: "assets/images/rightArrow.png",
                                 btnIconClr: AppColors.btnIconClr,),
