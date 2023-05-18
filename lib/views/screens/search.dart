@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:store/utils/colors.dart';
+import 'package:store/views/screens/product.dart';
 import 'package:store/views/widgets/textWidget.dart';
 
 class SearchScreen extends StatelessWidget {
@@ -46,118 +48,125 @@ class SearchScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 30,),
                 SizedBox(height: 480,
-                width: 305,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    SizedBox(height: 215,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          const TextWidget(txt: "RECENT SEARCHES",
-                            txtClr: AppColors.hintTxtClr,txtSize: 12,),
-                          SingleChildScrollView(
-                            child: SizedBox(
-                              height: 190,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  ListView.separated(
-                                    shrinkWrap: true,
-                                      scrollDirection: Axis.vertical,
-                                      itemCount: 3,
-                                      itemBuilder: (context,index){
-                                        return SizedBox(
-                                          height: 60,
-                                          child: Row(
-                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Row(
-                                                children: [
-                                                  Padding(
-                                                    padding: const EdgeInsets.all(10.0),
-                                                    child: Image.asset("assets/images/recentSearches.png",
-                                                      width: 18,height: 18,),),
-                                                    const TextWidget(txt: "Beolit 17",txtSize: 16,
-                                                      fontWeight: FontWeight.bold,),
-                                                ],
-                                              ),
-                                              Padding(
-                                                padding: const EdgeInsets.all(10.0),
-                                                child: Image.asset("assets/images/cross.png",
-                                                  width: 11,height: 11,),
-                                              ),
-
-                                            ],
-                                          ),
-                                        );
-                                      },
-                                      separatorBuilder: (context, index) =>
-                                          Container(color:AppColors.dividerClr ,height: 2,),
-                                      ),
-                                ],
+                    Center(
+                      child: SizedBox(height: 215,
+                          width: 305,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            const TextWidget(txt: "RECENT SEARCHES",
+                              txtClr: AppColors.hintTxtClr,txtSize: 12,),
+                            SingleChildScrollView(
+                              child: SizedBox(
+                                height: 190,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    ListView.separated(
+                                      shrinkWrap: true,
+                                        scrollDirection: Axis.vertical,
+                                        itemCount: 3,
+                                        itemBuilder: (context,index){
+                                          return SizedBox(
+                                            height: 60,
+                                            child: Row(
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                              children: [
+                                                Row(
+                                                  children: [
+                                                    Padding(
+                                                      padding: const EdgeInsets.all(10.0),
+                                                      child: Image.asset("assets/images/recentSearches.png",
+                                                        width: 18,height: 18,),),
+                                                      const TextWidget(txt: "Beolit 17",txtSize: 16,
+                                                        fontWeight: FontWeight.bold,),
+                                                  ],
+                                                ),
+                                                Padding(
+                                                  padding: const EdgeInsets.all(10.0),
+                                                  child: Image.asset("assets/images/cross.png",
+                                                    width: 11,height: 11,),
+                                                ),
+                                              ],
+                                            ),
+                                          );
+                                        },
+                                        separatorBuilder: (context, index) =>
+                                            Container(color:AppColors.dividerClr ,height: 2,),
+                                        ),
+                                  ],
+                                ),
                               ),
-                            ),
-                          )
-
-                        ],
-                      )),
+                            )
+                          ],
+                        )),
+                    ),
                     SizedBox(height: 253,child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const TextWidget(txt: "POPULAR SEARCHES",
-                        txtSize: 12,txtClr: AppColors.hintTxtClr,),
+                        const Center(
+                          child: SizedBox(
+                            width:305,
+                            child: TextWidget(txt: "POPULAR SEARCHES",
+                            txtSize: 12,txtClr: AppColors.hintTxtClr,),
+                          ),
+                        ),
                         const SizedBox(height: 24,),
                         Expanded(
-                          child: ListView.separated(
+                          child: ListView.builder(
                             itemCount: 9,
                             scrollDirection: Axis.horizontal,
                             itemBuilder: (context,index){
-                              return  Card(
-                                color: AppColors.cardClr,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(30)),
-                                shadowColor: Colors.black,
-                                child: SizedBox(
-                                  width: 140,
-                                  height: 209,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                    children: [
-                                      SizedBox(
-                                        height: 120,
-                                        width: 145,
-                                        child:FittedBox(
-                                            fit: BoxFit.fill,
-                                            child: Image.asset("assets/images/speaker.png")),
-                                      ),
-                                      SizedBox(
-                                        height: 48,
-                                        width: 145,
+                              return  GestureDetector(
+                                onTap: (){Get.to(()=>const Product());},
+                                  child:Padding(
+                                    padding: const EdgeInsets.only(left: 30.0),
+                                    child: Card(
+                                      color: AppColors.cardClr,
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(30)),
+                                      shadowColor: Colors.black,
+                                      child: SizedBox(
+                                        width: 140,
+                                        height: 209,
                                         child: Column(
-                                          mainAxisAlignment: MainAxisAlignment.center,
-                                          crossAxisAlignment: CrossAxisAlignment.center,
-                                          children: const [
+                                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                          children: [
                                             SizedBox(
-                                                height:24,
-                                                child: TextWidget(txt: "Beosound 1",txtSize: 16,fontWeight: FontWeight.bold,)),
+                                              height: 120,
+                                              width: 145,
+                                              child:FittedBox(
+                                                  fit: BoxFit.fill,
+                                                  child: Image.asset("assets/images/speaker.png")),
+                                            ),
                                             SizedBox(
-                                                height:20,
-                                                child: TextWidget(txt: "\$1,600",txtSize: 12,txtClr: AppColors.hintTxtClr,))
+                                              height: 48,
+                                              width: 145,
+                                              child: Column(
+                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                crossAxisAlignment: CrossAxisAlignment.center,
+                                                children: const [
+                                                  SizedBox(
+                                                      height:24,
+                                                      child: TextWidget(txt: "Beosound 1",txtSize: 16,fontWeight: FontWeight.bold,)),
+                                                  SizedBox(
+                                                      height:20,
+                                                      child: TextWidget(txt: "\$1,600",txtSize: 12,txtClr: AppColors.hintTxtClr,))
+                                                ],
+                                              ),
+                                            ),
                                           ],
                                         ),
                                       ),
-                                    ],
-                                  ),
-                                ),
+                                    ),
+                                  )
                               );
                             },
-                            separatorBuilder: (context, index) => const SizedBox(
-                              width: 10,
-                            ),
-
                           ),
                         ),
                         const SizedBox(height: 24,),

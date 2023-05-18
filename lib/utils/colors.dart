@@ -28,4 +28,5 @@ class AppColors{
   static const statusClr=Color(0xFFA63EFF);
   static const activeRangeSliderClr=Color(0xFFC6AB59);
   static const inactiveRangeSliserClr= Color(0xFFF3F6F8);
+  static const selectedClr= Color(0xFF008ad3);
 }

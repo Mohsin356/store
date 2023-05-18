@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:store/utils/colors.dart';
+import 'package:store/views/screens/product.dart';
 import 'package:store/views/screens/productCategory.dart';
 import 'package:store/views/widgets/textWidget.dart';
 
@@ -122,7 +123,7 @@ class Home extends StatelessWidget {
                   ),),
                 Container(color:AppColors.dividerClr ,height: 1,),
                 const SizedBox(height: 30,),
-                SizedBox(height: 310,
+                SizedBox(height: 290,
                   child:
                   Column(
                     children: [
@@ -135,56 +136,57 @@ class Home extends StatelessWidget {
                           )),
                       const SizedBox(height: 24,),
                       Expanded(
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 20.0),
-                          child: ListView.separated(
-                            itemCount: 9,
-                            scrollDirection: Axis.horizontal,
-                            itemBuilder: (context,index){
-                              return  Card(
-                                color: AppColors.cardClr,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(30)),
-                                shadowColor: Colors.black,
-                                child: SizedBox(
-                                  width: 145,
-                                  height: 209,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                    children: [
-                                      SizedBox(
-                                        height: 120,
-                                        width: 145,
-                                        child:FittedBox(
-                                            fit: BoxFit.fill,
-                                            child: Image.asset("assets/images/speaker.png")),
-                                      ),
-                                      SizedBox(
-                                        height: 48,
-                                        width: 145,
-                                        child: Column(
-                                          mainAxisAlignment: MainAxisAlignment.center,
-                                          crossAxisAlignment: CrossAxisAlignment.center,
-                                          children: const [
-                                            SizedBox(
-                                                height:24,
-                                                child: TextWidget(txt: "Speakers",txtSize: 16,fontWeight: FontWeight.bold,)),
-                                            SizedBox(
-                                                height:20,
-                                                child: TextWidget(txt: "\$1,600",txtSize: 12,txtClr: AppColors.hintTxtClr,))
-                                          ],
+                        child: ListView.builder(
+                          itemCount: 9,
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (context,index){
+                            return  Padding(
+                              padding: const EdgeInsets.only(left: 20.0),
+                              child: GestureDetector(
+                                onTap: (){Get.to(()=>const Product());},
+                                child: Card(
+                                  color: AppColors.cardClr,
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(30)),
+                                  shadowColor: Colors.black,
+                                  child: SizedBox(
+                                    width: 145,
+                                    height: 209,
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                      children: [
+                                        SizedBox(
+                                          height: 120,
+                                          width: 145,
+                                          child:FittedBox(
+                                              fit: BoxFit.fill,
+                                              child: Image.asset("assets/images/speaker.png")),
                                         ),
-                                      ),
-                                    ],
+                                        SizedBox(
+                                          height: 48,
+                                          width: 145,
+                                          child: Column(
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            crossAxisAlignment: CrossAxisAlignment.center,
+                                            children: const [
+                                              SizedBox(
+                                                  height:24,
+                                                  child: TextWidget(txt: "Speakers",txtSize: 16,fontWeight: FontWeight.bold,)),
+                                              SizedBox(
+                                                  height:20,
+                                                  child: TextWidget(txt: "\$1,600",txtSize: 12,txtClr: AppColors.hintTxtClr,))
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
-                              );
-                            },
-                            separatorBuilder: (context, index) => const SizedBox(
-                              width: 10,
-                            ),
+                              ),
+                            );
+                          },
 
-                          ),
+
                         ),
                       ),
                       const SizedBox(height: 24,),

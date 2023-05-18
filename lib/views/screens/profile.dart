@@ -2,7 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:store/utils/colors.dart';
+import 'package:store/views/screens/product.dart';
 import 'package:store/views/widgets/textWidget.dart';
+
 
 class Profile extends StatelessWidget {
   const Profile({Key? key}) : super(key: key);
@@ -103,30 +105,33 @@ class Profile extends StatelessWidget {
                               const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1,
                                   mainAxisSpacing: 0),
                               itemBuilder: (BuildContext context, int index) {
-                                return SizedBox(
-                                  width: 79,
-                                  height: 92,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                        height:64,
-                                        width: 79,
-                                        decoration: BoxDecoration(
-                                          color: AppColors.cardClr,
-                                          borderRadius: BorderRadius.circular(20.0),
+                                return GestureDetector(
+                                  onTap: (){Get.to(()=>const Product());},
+                                  child: SizedBox(
+                                    width: 79,
+                                    height: 92,
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      children: [
+                                        Container(
+                                          height:64,
+                                          width: 79,
+                                          decoration: BoxDecoration(
+                                            color: AppColors.cardClr,
+                                            borderRadius: BorderRadius.circular(20.0),
+                                          ),
+                                          child: FittedBox(
+                                              fit: BoxFit.fill,
+                                              child: Image.asset("assets/images/speaker.png")),
                                         ),
-                                        child: FittedBox(
-                                            fit: BoxFit.fill,
-                                            child: Image.asset("assets/images/speaker.png")),
-                                      ),
-                                      const SizedBox(
-                                        height:20,
-                                        child: TextWidget(txt: "Basesound",
-                                          fontWeight: FontWeight.bold,txtSize: 12,),
-                                      ),
-                                    ],
+                                        const SizedBox(
+                                          height:20,
+                                          child: TextWidget(txt: "Basesound",
+                                            fontWeight: FontWeight.bold,txtSize: 12,),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 );
                               },
@@ -154,7 +159,8 @@ class Profile extends StatelessWidget {
                                     ),
                                     SizedBox(height: 32,
                                     width: 145,
-                                    child: ElevatedButton(onPressed: (){
+                                    child: ElevatedButton(onPressed: ()
+                                    {
                                       showModalBottomSheet<void>(
                                         isScrollControlled: true,
                                         backgroundColor: AppColors.appBgClr,

@@ -4,6 +4,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:store/utils/colors.dart';
 import 'package:store/views/screens/Home.dart';
+import 'package:store/views/screens/order.dart';
 import 'package:store/views/screens/profile.dart';
 import 'package:store/views/screens/search.dart';
 
@@ -22,11 +23,8 @@ class _MyHomePageState extends State<MyHomePage> {
   static  final List<Widget> _widgetOptions = <Widget>[
     const Home(),
     const SearchScreen(),
-    const Text(
-      'Orders',
-      style: optionStyle,
-    ),
-   const Profile(),
+    const Order(),
+    const Profile(),
   ];
 
   @override
