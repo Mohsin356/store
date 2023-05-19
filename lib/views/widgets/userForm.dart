@@ -20,7 +20,7 @@ class UserForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: SizedBox(
-        width: 305,
+        width: Get.mediaQuery.size.width*0.79,
         height: 453,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

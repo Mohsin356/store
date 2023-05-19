@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:store/utils/colors.dart';
 import 'package:store/views/widgets/locationWidget.dart';
 import 'package:store/views/widgets/signupForm.dart';
@@ -28,7 +29,7 @@ class SignUp extends StatelessWidget {
                     children: [
                       Center(
                         child: SizedBox(
-                          width: 305,
+                          width: Get.mediaQuery.size.width*0.79,
                           height: 64,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -58,7 +59,7 @@ class SignUp extends StatelessWidget {
                             Container(color:AppColors.dividerClr ,height: 1,),
                             Center(
                               child: SizedBox(
-                                width: 305,
+                                width: Get.mediaQuery.size.width*0.79,
                                 child: ElevatedButton(onPressed: (){},
                                   style: ElevatedButton.styleFrom(
                                     foregroundColor: AppColors.btnTxtClr,backgroundColor: AppColors.fbBtnClr,

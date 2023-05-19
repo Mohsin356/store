@@ -30,10 +30,10 @@ class Home extends StatelessWidget {
                 child:
                   Column(
                     children: [
-                      const SizedBox(
-                          width: 305,
+                       SizedBox(
+                          width: Get.mediaQuery.size.width*0.79,
                           height: 20,
-                          child: Center(
+                          child: const Center(
                             child: Text("Browse By Categories",
                             style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold),),
                           )),
@@ -52,7 +52,7 @@ class Home extends StatelessWidget {
                               itemBuilder: (BuildContext context, int index) {
                                 return GestureDetector(
                                   child: SizedBox(
-                                    width: 205,
+                                    width: Get.mediaQuery.size.width*0.52,
                                     child: Stack(
                                       children: [
                                         Positioned(
@@ -60,7 +60,7 @@ class Home extends StatelessWidget {
                                           child:Transform(
                                             transform: Matrix4.skewY(-0.15),
                                             child: Container(
-                                              width: 205,
+                                              width: Get.mediaQuery.size.width*0.52,
                                               height: 170,
                                               decoration: BoxDecoration(
                                                 color: AppColors.cardClr,
@@ -72,7 +72,7 @@ class Home extends StatelessWidget {
                                         Positioned(
                                           bottom: 0,
                                           child:Container(
-                                            width: 205,
+                                            width: Get.mediaQuery.size.width*0.52,
                                             height: 100,
                                             decoration: BoxDecoration(
                                               color: AppColors.cardClr,
@@ -82,7 +82,7 @@ class Home extends StatelessWidget {
                                         ),
                                         SizedBox(
                                           height: 150,
-                                          width: 205,
+                                          width: Get.mediaQuery.size.width*0.52,
                                           child:FittedBox(
                                         fit: BoxFit.fill,
                                         child: Image.asset("assets/images/speaker.png")),
@@ -91,7 +91,7 @@ class Home extends StatelessWidget {
                                           bottom: 20,
                                           child: SizedBox(
                                             height: 48,
-                                            width: 205,
+                                            width: Get.mediaQuery.size.width*0.52,
                                             child: Column(
                                               mainAxisAlignment: MainAxisAlignment.center,
                                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -127,10 +127,10 @@ class Home extends StatelessWidget {
                   child:
                   Column(
                     children: [
-                      const SizedBox(
-                          width: 305,
+                      SizedBox(
+                          width: Get.mediaQuery.size.width*0.79,
                           height: 20,
-                          child: Center(
+                          child: const Center(
                             child: Text("Recommended For You",
                               style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold),),
                           )),
@@ -150,21 +150,21 @@ class Home extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(30)),
                                   shadowColor: Colors.black,
                                   child: SizedBox(
-                                    width: 145,
+                                    width: Get.mediaQuery.size.width*0.35,
                                     height: 209,
                                     child: Column(
                                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                                       children: [
                                         SizedBox(
                                           height: 120,
-                                          width: 145,
+                                          width: Get.mediaQuery.size.width*0.35,
                                           child:FittedBox(
                                               fit: BoxFit.fill,
                                               child: Image.asset("assets/images/speaker.png")),
                                         ),
                                         SizedBox(
                                           height: 48,
-                                          width: 145,
+                                          width: Get.mediaQuery.size.width*0.35,
                                           child: Column(
                                             mainAxisAlignment: MainAxisAlignment.center,
                                             crossAxisAlignment: CrossAxisAlignment.center,

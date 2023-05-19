@@ -40,7 +40,7 @@ class ProductCategoryController extends GetxController{
                     ),),
                   Center(
                       child: SizedBox(
-                        width: 305,
+                        width: Get.mediaQuery.size.width*0.79,
                         height: 84,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -51,7 +51,7 @@ class ProductCategoryController extends GetxController{
                             SizedBox(height: 44,
                               child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
-                                  SizedBox(width: 95,
+                                  SizedBox(width: Get.mediaQuery.size.width*0.24,
                                     child: Obx(() => ElevatedButton(
                                       onPressed: (){
                                         isClickedMen.value=!isClickedMen.value;
@@ -66,7 +66,7 @@ class ProductCategoryController extends GetxController{
                                       child: const TextWidget(txt: "Men",
                                         txtSize: 14,fontWeight: FontWeight.bold,),
                                     )),),
-                                  SizedBox(width: 95,
+                                  SizedBox(width: Get.mediaQuery.size.width*0.24,
                                     child: Obx(() => ElevatedButton(
                                       onPressed: (){
                                         isClickedMen.value=false;
@@ -81,7 +81,7 @@ class ProductCategoryController extends GetxController{
                                       child: const TextWidget(txt: "Women",
                                         txtSize: 14,fontWeight: FontWeight.bold,),
                                     )),),
-                                  SizedBox(width: 95,
+                                  SizedBox(width: Get.mediaQuery.size.width*0.24,
                                     child: Obx(() => ElevatedButton(
                                       onPressed: (){
                                         isClickedMen.value=false;
@@ -105,7 +105,7 @@ class ProductCategoryController extends GetxController{
                   Container(color:AppColors.dividerClr ,height: 1,),
                   Center(
                       child: SizedBox(
-                        width: 305,
+                        width: Get.mediaQuery.size.width*0.79,
                         height: 148,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -134,7 +134,7 @@ class ProductCategoryController extends GetxController{
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Container(width: 145,
+                                  Container(width: Get.mediaQuery.size.width*0.38,
                                     decoration: BoxDecoration(
                                       color:AppColors.cardClr,
                                       borderRadius: BorderRadius.circular(5.0),
@@ -144,7 +144,7 @@ class ProductCategoryController extends GetxController{
                                             "${currentRangeValues.value.start.round().toString()}",
                                           txtClr: AppColors.txtClr,fontWeight: FontWeight.bold,txtSize: 14,))
                                     ),),
-                                  Container(width: 145,
+                                  Container(width: Get.mediaQuery.size.width*0.38,
                                     decoration: BoxDecoration(
                                       color:AppColors.cardClr,
                                       borderRadius: BorderRadius.circular(5.0),
@@ -167,14 +167,15 @@ class ProductCategoryController extends GetxController{
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Center(
-                          child: SizedBox(width: 305,
-                          child: TextWidget(txt: "Color",txtSize: 16,
+                        Center(
+                          child: SizedBox(
+                            width: Get.mediaQuery.size.width*0.79,
+                          child: const TextWidget(txt: "Color",txtSize: 16,
                             fontWeight: FontWeight.bold,txtClr: AppColors.txtClr,),),
                         ),
                         Center(
                           child: SizedBox(
-                            width: 329,
+                            width: Get.mediaQuery.size.width*0.83,
                             height: 44,
                             child: Padding(
                               padding: const EdgeInsets.only(left: 10.0),
@@ -211,13 +212,13 @@ class ProductCategoryController extends GetxController{
                   Container(color:AppColors.dividerClr ,height: 1,),
                   Center(
                     child: SizedBox(
-                      width: 305,
+                      width: Get.mediaQuery.size.width*0.79,
                       height: 44,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                         SizedBox(height: 44,
-                        width: 193,
+                          width: Get.mediaQuery.size.width*0.51,
                         child: ElevatedButton(onPressed: (){}
                         ,
                           style: ElevatedButton.styleFrom(
@@ -225,7 +226,7 @@ class ProductCategoryController extends GetxController{
                           ), child: const TextWidget(txt: "APPLY FILTERS (4)",
                           fontWeight: FontWeight.bold,txtSize: 12,),),),
                           SizedBox(height: 44,
-                            width: 96,
+                            width: Get.mediaQuery.size.width*0.25,
                             child: ElevatedButton(onPressed: (){}
                               ,
                               style: ElevatedButton.styleFrom(

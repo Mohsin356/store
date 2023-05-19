@@ -12,6 +12,10 @@ class AppColors{
   static const btnTxtClr=Colors.white;
   static const btnIconClr=Colors.white;
   static const iconClr=Colors.black;
+  static const greyIconClr=Color(0xFF8F92A1);
+  static const creditCardOneClr=Colors.black;
+  static const creditCardTwoClr=Color(0xFFA2A2A2);
+  static const creditCardThreeClr=Color(0xFFD1D1D1);
   static const dividerClr= Color(0xFFF3F6F8);
   static const cursorClr= Colors.black;
   static const focusClr= Colors.black;

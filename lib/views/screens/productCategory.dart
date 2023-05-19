@@ -42,21 +42,21 @@ class ProductCategory extends StatelessWidget {
             backgroundColor: Colors.transparent,
             elevation: 0.0,
           ),
-          body: Center(
-            child: SizedBox(
-              width: 345,
-              child: CustomScrollView(
+          body: SizedBox(
+            width: Get.mediaQuery.size.width,
+            child: CustomScrollView(
         slivers: <Widget>[
         SliverAppBar(
-              backgroundColor: AppColors.appBgClr,
-              automaticallyImplyLeading: false,
-              expandedHeight: 300.0,
-              flexibleSpace: FlexibleSpaceBar(
-                centerTitle: true,
-                background: Padding(
-                  padding: const EdgeInsets.only(bottom: 10.0),
+            backgroundColor: AppColors.appBgClr,
+            automaticallyImplyLeading: false,
+            expandedHeight: 300.0,
+            flexibleSpace: FlexibleSpaceBar(
+              centerTitle: true,
+              background: Padding(
+                padding: const EdgeInsets.only(bottom: 10.0),
+                child: Center(
                   child: SizedBox(
-                    width: 345,
+                    width: Get.mediaQuery.size.width*0.92,
                     child: Stack(
                       children: [
                         Positioned(
@@ -64,7 +64,7 @@ class ProductCategory extends StatelessWidget {
                           child:Transform(
                             transform: Matrix4.skewY(-0.15),
                             child: Container(
-                              width: 345,
+                              width: Get.mediaQuery.size.width*0.92,
                               height: 130,
                               decoration: BoxDecoration(
                                 color: AppColors.cardClr,
@@ -76,7 +76,7 @@ class ProductCategory extends StatelessWidget {
                         Positioned(
                           bottom: 0,
                           child:Container(
-                            width: 345,
+                            width: Get.mediaQuery.size.width*0.92,
                             height: 140,
                             decoration: BoxDecoration(
                               color: AppColors.cardClr,
@@ -88,7 +88,7 @@ class ProductCategory extends StatelessWidget {
                           alignment: Alignment.topCenter,
                           child: SizedBox(
                             height: 245,
-                            width: 305,
+                            width: Get.mediaQuery.size.width*0.92,
                             child:FittedBox(
                                 fit: BoxFit.fill,
                                 child: Image.asset("assets/images/speaker.png")),
@@ -120,109 +120,116 @@ class ProductCategory extends StatelessWidget {
                   ),
                 ),
               ),
+            ),
         ),
       SliverList(
         delegate: SliverChildBuilderDelegate(
-                  (_, int index) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10.0),
-                  child: GestureDetector(
-                    onTap: (){Get.to(()=>const Product());},
-                    child: Container(
-                      width: 305,
-                      height: 112,
-                      decoration: BoxDecoration(
-                        color: AppColors.cardClr,
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Row(
-                          children: [
-                            SizedBox(width: 88,height: 88,
-                            child: FittedBox(
-                            fit: BoxFit.fill,
-                            child: Image.asset("assets/images/speaker.png")),),
-                            SizedBox(
-                              height: 72,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  const SizedBox(
-                                      height:24,
-                                      child: TextWidget(txt:"Beosound 1",txtSize: 16,fontWeight: FontWeight.bold,)),
-                                  SizedBox(
-                                      height: 20,
-                                      width: 82,
-                                      child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          const TextWidget(txt:"4.5",txtSize: 12,),
-                                          SizedBox(
-                                            width: 54,
-                                            child: Row(
-                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                              children: [
-                                                Container(
-                                                  height:6,width:6,
-                                                  decoration: BoxDecoration(
-                                                    color: AppColors.ratingClr,
-                                                    borderRadius: BorderRadius.circular(40.0),
+                (_, int index) {
+              return Center(
+                child: SizedBox(
+                  width: Get.mediaQuery.size.width*0.92,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10.0),
+                    child: GestureDetector(
+                      onTap: (){Get.to(()=>const Product());},
+                      child: Container(
+                        width: Get.mediaQuery.size.width*0.92,
+                        height: 112,
+                        decoration: BoxDecoration(
+                          color: AppColors.cardClr,
+                          borderRadius: BorderRadius.circular(20.0),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Row(
+                            children: [
+                              SizedBox(
+                                width: Get.mediaQuery.size.width*0.28,
+                                height: 88,
+                              child: FittedBox(
+                              fit: BoxFit.fill,
+                              child: Image.asset("assets/images/speaker.png")),),
+                              SizedBox(
+                                height: 72,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const SizedBox(
+                                        height:24,
+                                        child: TextWidget(txt:"Beosound 1",txtSize: 16,fontWeight: FontWeight.bold,)),
+                                    SizedBox(
+                                        height: 20,
+                                      width: Get.mediaQuery.size.width*0.21,
+                                        child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            const TextWidget(txt:"4.5",txtSize: 12,),
+                                            SizedBox(
+                                              width: 54,
+                                              child: Row(
+                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                children: [
+                                                  Container(
+                                                    height:6,width:6,
+                                                    decoration: BoxDecoration(
+                                                      color: AppColors.ratingClr,
+                                                      borderRadius: BorderRadius.circular(40.0),
+                                                    ),
                                                   ),
-                                                ),
-                                                Container(
-                                                  height:6,width:6,
-                                                  decoration: BoxDecoration(
-                                                    color: AppColors.ratingClr,
-                                                    borderRadius: BorderRadius.circular(40.0),
+                                                  Container(
+                                                    height:6,width:6,
+                                                    decoration: BoxDecoration(
+                                                      color: AppColors.ratingClr,
+                                                      borderRadius: BorderRadius.circular(40.0),
+                                                    ),
                                                   ),
-                                                ),
-                                                Container(
-                                                  height:6,width:6,
-                                                  decoration: BoxDecoration(
-                                                    color: AppColors.ratingClr,
-                                                    borderRadius: BorderRadius.circular(40.0),
+                                                  Container(
+                                                    height:6,width:6,
+                                                    decoration: BoxDecoration(
+                                                      color: AppColors.ratingClr,
+                                                      borderRadius: BorderRadius.circular(40.0),
+                                                    ),
                                                   ),
-                                                ),
-                                                Container(
-                                                  height:6,width:6,
-                                                  decoration: BoxDecoration(
-                                                    color: AppColors.ratingClr,
-                                                    borderRadius: BorderRadius.circular(40.0),
+                                                  Container(
+                                                    height:6,width:6,
+                                                    decoration: BoxDecoration(
+                                                      color: AppColors.ratingClr,
+                                                      borderRadius: BorderRadius.circular(40.0),
+                                                    ),
                                                   ),
-                                                ),
-                                                Container(
-                                                  height:6,width:6,
-                                                  decoration: BoxDecoration(
-                                                    color: AppColors.emptyRatingClr,
-                                                    borderRadius: BorderRadius.circular(10.0),
+                                                  Container(
+                                                    height:6,width:6,
+                                                    decoration: BoxDecoration(
+                                                      color: AppColors.emptyRatingClr,
+                                                      borderRadius: BorderRadius.circular(10.0),
+                                                    ),
                                                   ),
-                                                ),
-                                              ],
+                                                ],
+                                              ),
                                             ),
-                                          ),
-                                        ],
-                                      )),
-                                  const  SizedBox(height: 8,),
-                                  const  SizedBox(
-                                      height: 20,
-                                      child: TextWidget(txt:"\$ 1600",txtSize: 12,)),
-                                ],
-                              ),
-                            )
-                          ],
+                                          ],
+                                        )),
+                                    const  SizedBox(height: 8,),
+                                    const  SizedBox(
+                                        height: 20,
+                                        child: TextWidget(txt:"\$ 1600",txtSize: 12,)),
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       ),
                     ),
                   ),
-                );
-              },
-              childCount: 20,
+                ),
+              );
+            },
+            childCount: 20,
         ),
       ),
       ],
     ),
-            ),
           ),
         ) );
   }

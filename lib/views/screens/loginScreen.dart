@@ -44,7 +44,7 @@ class LoginScreen extends StatelessWidget {
                       children: [
                         Center(
                           child: SizedBox(
-                            width: 305,
+                            width: Get.mediaQuery.size.width*0.79,
                             height: 64,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -75,7 +75,7 @@ class LoginScreen extends StatelessWidget {
                               Container(color:AppColors.dividerClr ,height: 1,),
                               Center(
                                 child: SizedBox(
-                                  width: 305,
+                                  width: Get.mediaQuery.size.width*0.79,
                                   child: ElevatedButton(onPressed: (){},
                                     style: ElevatedButton.styleFrom(
                                       foregroundColor: AppColors.btnTxtClr,backgroundColor: AppColors.fbBtnClr,

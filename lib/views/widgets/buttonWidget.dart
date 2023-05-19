@@ -2,6 +2,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ButtonWidget extends StatelessWidget {
   const ButtonWidget({Key? key,this.function, this.btnTxt,this.btnClr,this.btnTxtClr,
@@ -20,7 +21,7 @@ class ButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 305,
+      width: Get.mediaQuery.size.width*0.79,
       child: ElevatedButton(onPressed: function,
           style: ElevatedButton.styleFrom(
             foregroundColor: btnTxtClr,backgroundColor: btnClr,

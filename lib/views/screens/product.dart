@@ -44,7 +44,7 @@ class Product extends StatelessWidget {
                   top: 20,
                   child: SizedBox(
                     height: 240,
-                    width: 170,
+                    width: Get.mediaQuery.size.width*0.3,
                     child:Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -144,7 +144,7 @@ class Product extends StatelessWidget {
                     alignment: Alignment.bottomCenter,
                       child: SizedBox(
                         height: 230,
-                        width:305,
+                        width: Get.mediaQuery.size.width*0.79,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -171,7 +171,7 @@ class Product extends StatelessWidget {
                               ],
                             ),),
                             SizedBox(
-                              width:305,
+                              width: Get.mediaQuery.size.width*0.79,
                               height: 44,
                               child: ElevatedButton(
                                 onPressed: (){},
@@ -193,7 +193,7 @@ class Product extends StatelessWidget {
                   top: 60,
                   child: SizedBox(
                     height: 360,
-                    width: 170,
+                    width: Get.mediaQuery.size.width*0.53,
                     child:FittedBox(
                         fit: BoxFit.cover,
                         child: Image.asset("assets/images/speaker.png")),

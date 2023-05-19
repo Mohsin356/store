@@ -32,7 +32,7 @@ class Profile extends StatelessWidget {
                   Align(
                     alignment: Alignment.topCenter,
                     child: SizedBox(height: 220,
-                    width: 305,
+                      width: Get.mediaQuery.size.width*0.79,
                       child: Column(
                         children: [
                           const SizedBox(height: 68,),
@@ -66,7 +66,7 @@ class Profile extends StatelessWidget {
                   Align(
                     alignment: AlignmentDirectional.bottomCenter,
                     child: Container(
-                      width: 305,
+                      width: Get.mediaQuery.size.width*0.79,
                       height: 313,
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -78,7 +78,7 @@ class Profile extends StatelessWidget {
                           children: [
                             SizedBox(
                               height: 37,
-                              width: 305,
+                              width: Get.mediaQuery.size.width*0.79,
                               child: Padding(
                                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                                 child: SizedBox(
@@ -87,9 +87,9 @@ class Profile extends StatelessWidget {
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: const [
                                     TextWidget(txt: "Order #CS1020",
-                                    fontWeight: FontWeight.bold,txtSize: 10,),
+                                    fontWeight: FontWeight.bold,txtSize: 12,),
                                       TextWidget(txt: "In Progress",txtClr: AppColors.statusClr,
-                                        fontWeight: FontWeight.bold,txtSize: 10,),
+                                        fontWeight: FontWeight.bold,txtSize: 12,),
                                     ],
                                   ),
                                 ),
@@ -142,7 +142,7 @@ class Profile extends StatelessWidget {
                             Center(
                               child: SizedBox(
                                 height: 103,
-                                width: 257,
+                                width: Get.mediaQuery.size.width*0.4,
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -158,7 +158,7 @@ class Profile extends StatelessWidget {
                                       ],
                                     ),
                                     SizedBox(height: 32,
-                                    width: 145,
+                                        width: Get.mediaQuery.size.width*0.36,
                                     child: ElevatedButton(onPressed: ()
                                     {
                                       showModalBottomSheet<void>(
@@ -202,19 +202,21 @@ class Profile extends StatelessWidget {
                                                                   child: Image.asset("assets/images/trackOrder.png"),
                                                                 ))
                                                           ),
-                                                          SizedBox(width: 305,
+                                                          SizedBox(width: Get.mediaQuery.size.width*0.79,
                                                           height: 60,
                                                           child: Column(
                                                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                             crossAxisAlignment: CrossAxisAlignment.center,
-                                                            children: const[
-                                                               SizedBox(width: 305,height: 32,
-                                                                child: Center(
+                                                            children: [
+                                                               SizedBox(width: Get.mediaQuery.size.width*0.79,
+                                                                 height: 32,
+                                                                child: const Center(
                                                                   child: TextWidget(txt: "Tracking Order",
                                                                     txtSize: 24,fontWeight: FontWeight.bold,),
                                                                 ),),
-                                                              SizedBox(width: 305,height: 20,
-                                                                child: Center(
+                                                              SizedBox(width: Get.mediaQuery.size.width*0.79,
+                                                                height: 20,
+                                                                child: const Center(
                                                                   child: TextWidget(txt: "Enter upto 25 tracking numbers,"
                                                                       " one per line.",txtClr: AppColors.hintTxtClr,
                                                                     txtSize: 14,fontWeight: FontWeight.bold,),
@@ -226,7 +228,8 @@ class Profile extends StatelessWidget {
                                                         ],
                                                       ),
                                                     ),
-                                                  Container(height: 44,width: 305,
+                                                  Container(height: 44,
+                                                    width: Get.mediaQuery.size.width*0.79,
                                                     decoration: BoxDecoration(
                                                       color:AppColors.dividerClr ,
                                                       borderRadius: BorderRadius.circular(5.0),
@@ -246,7 +249,7 @@ class Profile extends StatelessWidget {
                                                       ),
                                                     ),),
                                                     SizedBox(height: 44,
-                                                        width: 305,
+                                                        width: Get.mediaQuery.size.width*0.79,
                                                         child: ElevatedButton(
                                                           onPressed: (){},
                                                           style: ElevatedButton.styleFrom(

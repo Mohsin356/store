@@ -16,7 +16,7 @@ class SignUpForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: SizedBox(
-        width: 305,
+        width: Get.mediaQuery.size.width*0.79,
         height: 453,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -71,7 +71,7 @@ class SignUpForm extends StatelessWidget {
                 const SizedBox(height: 10),
                 Obx(() => SizedBox(
                   height: 40,
-                  width: 305,
+                  width: Get.mediaQuery.size.width*0.79,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,

@@ -32,7 +32,7 @@ class PhoneSignUp extends StatelessWidget {
                       const LocationWidget(),
                       Center(
                         child: SizedBox(
-                          width: 305,
+                          width: Get.mediaQuery.size.width*0.79,
                           height: 280,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -76,13 +76,6 @@ class PhoneSignUp extends StatelessWidget {
                                     )
                                   ],
                                 ),
-                              ),
-
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-
-                                ],
                               ),
                               ButtonWidget(btnTxt: "CONTINUE",btnClr: AppColors.btnClr,
                                 btnTxtClr: AppColors.btnTxtClr,btnTxtSize: 17,

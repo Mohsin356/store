@@ -22,7 +22,8 @@ class SearchScreen extends StatelessWidget {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [Container(height: 44,width: 305,
+                      children: [Container(height: 44,
+                        width: Get.mediaQuery.size.width*0.92,
                       decoration: BoxDecoration(
                         color:AppColors.dividerClr ,
                         borderRadius: BorderRadius.circular(5.0),
@@ -47,14 +48,15 @@ class SearchScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 30,),
-                SizedBox(height: 480,
+                SizedBox(
+                    height: 480,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Center(
                       child: SizedBox(height: 215,
-                          width: 305,
+                          width: Get.mediaQuery.size.width*0.92,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -63,6 +65,7 @@ class SearchScreen extends StatelessWidget {
                               txtClr: AppColors.hintTxtClr,txtSize: 12,),
                             SingleChildScrollView(
                               child: SizedBox(
+                                width: Get.mediaQuery.size.width*0.92,
                                 height: 190,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -106,18 +109,20 @@ class SearchScreen extends StatelessWidget {
                           ],
                         )),
                     ),
-                    SizedBox(height: 253,child: Column(
+                    SizedBox(
+                      height: 253,child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Center(
+                         Center(
                           child: SizedBox(
-                            width:305,
-                            child: TextWidget(txt: "POPULAR SEARCHES",
+                            width: Get.mediaQuery.size.width*0.92,
+                            child: const TextWidget(txt: "POPULAR SEARCHES",
                             txtSize: 12,txtClr: AppColors.hintTxtClr,),
                           ),
                         ),
-                        const SizedBox(height: 24,),
-                        Expanded(
+                        SizedBox(
+                          height: 209,
                           child: ListView.builder(
                             itemCount: 9,
                             scrollDirection: Axis.horizontal,
@@ -125,28 +130,28 @@ class SearchScreen extends StatelessWidget {
                               return  GestureDetector(
                                 onTap: (){Get.to(()=>const Product());},
                                   child:Padding(
-                                    padding: const EdgeInsets.only(left: 30.0),
+                                    padding: const EdgeInsets.only(left: 10.0),
                                     child: Card(
                                       color: AppColors.cardClr,
                                       shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.circular(30)),
                                       shadowColor: Colors.black,
                                       child: SizedBox(
-                                        width: 140,
+                                        width: Get.mediaQuery.size.width*0.35,
                                         height: 209,
                                         child: Column(
                                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                                           children: [
                                             SizedBox(
                                               height: 120,
-                                              width: 145,
+                                              width: Get.mediaQuery.size.width*0.35,
                                               child:FittedBox(
                                                   fit: BoxFit.fill,
                                                   child: Image.asset("assets/images/speaker.png")),
                                             ),
                                             SizedBox(
                                               height: 48,
-                                              width: 145,
+                                              width: Get.mediaQuery.size.width*0.35,
                                               child: Column(
                                                 mainAxisAlignment: MainAxisAlignment.center,
                                                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -169,7 +174,6 @@ class SearchScreen extends StatelessWidget {
                             },
                           ),
                         ),
-                        const SizedBox(height: 24,),
                       ],
                     ),)
                   ],

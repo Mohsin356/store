@@ -32,7 +32,7 @@ class OtpScreen extends StatelessWidget {
                       const LocationWidget(),
                       Center(
                         child: SizedBox(
-                          width: 305,
+                          width: Get.mediaQuery.size.width*0.79,
                           height: 280,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,

@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:store/utils/colors.dart';
 import 'package:store/views/widgets/textWidget.dart';
 
@@ -10,7 +11,7 @@ class LocationWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: SizedBox(
-        width: 315,
+        width: Get.mediaQuery.size.width*0.8,
         height: 24,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
