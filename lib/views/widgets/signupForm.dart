@@ -44,7 +44,7 @@ class SignUpForm extends StatelessWidget {
                   style: const TextStyle(fontWeight: FontWeight.bold),
                   keyboardType: TextInputType.visiblePassword,
                   obscureText: controller.hiddenPass.value,
-                  onChanged: (value)=>controller.setName(value),
+                  onChanged: (value)=>controller.setPass(value),
                   decoration:  InputDecoration(
                     //prefixIcon: Icon(txtFieldIcon,color: iconClr,size: iconSize,),
                     prefixIcon: Padding(

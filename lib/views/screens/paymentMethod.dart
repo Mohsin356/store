@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:store/utils/colors.dart';
+import 'package:store/views/screens/addCard.dart';
+import 'package:store/views/screens/orderReview.dart';
 import 'package:store/views/widgets/buttonWidget.dart';
 import 'package:store/views/widgets/textWidget.dart';
 class PaymentMethod extends StatelessWidget {
@@ -68,7 +70,7 @@ class PaymentMethod extends StatelessWidget {
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
-                                    child: Image.asset("assets/images/dropDownIcon.png",width:24,height: 24,),
+                                    child: Image.asset("assets/images/dropDownIcon.png",width:22,height: 22,),
                                   ),
                                 ],
                               ),
@@ -90,6 +92,7 @@ class PaymentMethod extends StatelessWidget {
                                           child: Icon(Icons.add,size: 24,color: AppColors.iconClr,),
                                         ),
                                       ),
+                                      onTap: (){Get.to(()=> AddCreditCard());},
                                     ),
                                     SizedBox(
                                       width: Get.mediaQuery.size.width*0.66,
@@ -276,7 +279,9 @@ class PaymentMethod extends StatelessWidget {
                       child: ButtonWidget(btnTxt: "ORDER REVIEW",btnClr: AppColors.btnClr,
                         btnTxtClr: AppColors.btnTxtClr,btnTxtSize: 14,
                         spaceBeforeTxt: 30,
-                        function: (){},
+                        function: (){
+                        Get.to(()=>const OrderReview());
+                        },
                         btnIcon: "assets/images/rightArrow.png",
                         btnIconClr: AppColors.btnIconClr,),
                     ),

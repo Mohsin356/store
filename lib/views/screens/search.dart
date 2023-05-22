@@ -71,6 +71,7 @@ class SearchScreen extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     ListView.separated(
+                                      physics: const NeverScrollableScrollPhysics(),
                                       shrinkWrap: true,
                                         scrollDirection: Axis.vertical,
                                         itemCount: 3,
