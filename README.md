@@ -5,7 +5,7 @@ A new Flutter project.
 ## Demo 
 
 Here is the demo for the project.
-(https://github.com/Mohsin356/store/assets/101866366/a831b3c4-a8ed-42e0-a149-4c0031403d84)
+https://github.com/Mohsin356/store/assets/101866366/a831b3c4-a8ed-42e0-a149-4c0031403d84
 
 
 
