@@ -24,8 +24,8 @@ class AddCreditCard extends StatelessWidget {
                     FocusScopeNode currentFocus = FocusScope.of(context);
                     if (!currentFocus.hasPrimaryFocus) {
                       currentFocus.unfocus();
-                      Get.back();
                     }
+                    Get.back();
                 },
                 child: Image.asset("assets/images/backArrow.png",),
               ),
