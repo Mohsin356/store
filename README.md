@@ -5,8 +5,14 @@ A new Flutter project.
 ## Demo 
 
 Here is the demo for the project.
+<div style="display: flex; justify-content: center;">
+  <video width="400" controls>
+    <source src="[video_url](https://github.com/Mohsin356/store/assets/101866366/a831b3c4-a8ed-42e0-a149-4c0031403d84)" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
 
-https://github.com/Mohsin356/store/assets/101866366/a831b3c4-a8ed-42e0-a149-4c0031403d84
+
 
 Some extended screens are
 
